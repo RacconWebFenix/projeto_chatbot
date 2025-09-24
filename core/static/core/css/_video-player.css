@@ -1,0 +1,27 @@
+/* --- Estilos do Vídeo de Boas-Vindas --- */
+
+#video-flutuante {
+  display: none;
+}
+
+#canvas-flutuante {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 320px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+#canvas-flutuante.visivel {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  #canvas-flutuante {
+    width: 160px;
+    bottom: 0px;
+    right: 0px;
+  }
+}

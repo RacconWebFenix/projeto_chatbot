@@ -1,0 +1,12 @@
+/* core/static/core/css/style.css (Apenas Estilos Globais) */
+
+/* --- ESTILOS GLOBAIS --- */
+body {
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
