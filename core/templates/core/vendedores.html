@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Meu Chatbot</title>
+    <title>Meu Chatbot - Vendedores</title>
 
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
 
@@ -15,11 +15,15 @@
     />
   </head>
 
-  <body>
+  <body class="background2">
     <video id="video-flutuante" width="320" playsinline>
       Seu navegador não suporta a tag de vídeo.
     </video>
     <canvas id="canvas-flutuante" width="320" height="568"></canvas>
+
+    <div class="help-icon">
+      <i class="fa-solid fa-comment-dots"></i>
+    </div>
 
     <div class="chat-widget chat-widget--hidden">
       <div class="chat-widget__header">
@@ -35,10 +39,6 @@
         <button class="video-modal__close-button">&times;</button>
         <video class="video-modal__video-player" width="100%" controls></video>
       </div>
-    </div>
-
-    <div class="login-button-container">
-      <a href="{% url 'vendedores' %}" class="login-button">LOGAR</a>
     </div>
 
     <script type="module" src="{% static 'core/js/main.js' %}"></script>

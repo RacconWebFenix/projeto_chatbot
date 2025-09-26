@@ -5,19 +5,27 @@ import { getVideoSrcBasedOnTime } from "./utils.js";
 import tutorialFlows from "./flows.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- LÓGICA DO VÍDEO DE BOAS-VINDAS ---
-  const hoje = new Date().toISOString().slice(0, 10);
-  const ultimaExibicao = localStorage.getItem("videoVistoEm");
+  // --- LÓGICA DO VÍDEO DE BOAS-VINDAS (SÓ NA PÁGINA /VENDEDORES/) ---
+  if (window.location.pathname === "/vendedores/") {
+    const hoje = new Date().toISOString().slice(0, 10);
+    const ultimaExibicao = localStorage.getItem("videoVistoEm");
 
-  if (ultimaExibicao === hoje) {
-    mostrarIconeDeAjuda();
-  } else {
-    const horaManual = null;
-    const agora = new Date();
-    const horaAtual = horaManual !== null ? horaManual : agora.getHours();
-    const caminhoStaticBase = "/static/core/video/";
-    const videoParaTocar = getVideoSrcBasedOnTime(horaAtual, caminhoStaticBase);
-    ChromaKeyPlayer.init(videoParaTocar, mostrarIconeDeAjuda);
+    if (ultimaExibicao === hoje) {
+      mostrarIconeDeAjuda();
+    } else {
+      const horaManual = null;
+      const agora = new Date();
+      const horaAtual = horaManual !== null ? horaManual : agora.getHours();
+      const caminhoStaticBase = "/static/core/video/";
+      const videoParaTocar = getVideoSrcBasedOnTime(
+        horaAtual,
+        caminhoStaticBase
+      );
+      ChromaKeyPlayer.init(videoParaTocar, () => {
+        localStorage.setItem("videoVistoEm", hoje);
+        mostrarIconeDeAjuda();
+      });
+    }
   }
 
   // --- LÓGICA PARA O WIDGET DE AJUDA ---

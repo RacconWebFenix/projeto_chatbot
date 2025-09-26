@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import home  # <--- TENHO 99% DE CERTEZA QUE ESTA LINHA ESTÁ FALTANDO
+from core.views import home, vendedores
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),  # Adicione esta linha!
+    path('vendedores/', vendedores, name='vendedores'),
 ]
