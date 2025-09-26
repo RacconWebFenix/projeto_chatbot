@@ -8,15 +8,16 @@ const tutorialFlows = {
       videoFile: "cotacoes-parte1.mp4",
     },
     {
-      title: "Parte 2: Como Aceitar e Formalizar a Participação",
+      title: "Parte 2: Como Aceitar e Formalizar a Participação na Cotaçao",
       videoFile: "cotacoes-parte2.mp4",
     },
     {
-      title: "Parte 3: Preenchendo os Detalhes da Proposta",
+      title: "Parte 3: Preenchendo os Detalhes da Proposta da Cotação",
       videoFile: "cotacoes-parte3.mp4",
     },
     {
-      title: "Parte 4: Enviando a Proposta e Consultando o Histórico",
+      title:
+        "Guia Rápido: Campos Obrigatórios (*) para Avançar na Cotação e Inserção dos Itens",
       videoFile: "cotacoes-parte4.mp4",
     },
   ],
